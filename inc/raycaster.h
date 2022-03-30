@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycaster.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 14:03:45 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/03/31 00:25:24 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 # define PI 3.14159265359
 # define WIN_W 2048
 # define WIN_H 1024
- 
+
 // place holder, should replaced with variables holding the actual calues
-# define MAP_H 4
-# define MAP_W 13
+# define MAP_H 4	//state->map->map_height
+# define MAP_W 13	//state->map->map_width
 
 typedef enum e_result {ERR, OK}	t_result;
 
@@ -58,6 +58,17 @@ typedef struct s_textures
 	int		abs[ABS_COUNT];
 }				t_textures;
 
+typedef struct s_map
+{
+	int			map_height;
+	int			map_width;
+	int			pos_map;
+	char		**map;
+	char		**path_text;
+	char		**colours;
+	int			rgb[6];
+} t_map;
+
 typedef struct s_state
 {
 	void		*mlx;
@@ -65,9 +76,13 @@ typedef struct s_state
 	t_img		img;
 	t_img		buffer;
 	int			mouse_x;
-	char		**map;
+	// char		**map;
 	t_player	player;
 	t_textures	textures;
+
+	struct s_map	*map;						//added Kathi
+	int		ceiling;
+	int		floor;
 }				t_state;
 
 #endif

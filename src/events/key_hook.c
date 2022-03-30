@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:01:27 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 12:55:01 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/03/31 00:23:11 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	go(t_state *state, t_vec2 dir)
 	const double	new_x = state->player.pos.x + STEP_SIZE * dir.x;
 	const double	new_y = state->player.pos.y + STEP_SIZE * dir.y;
 
-	if (new_x > 0 && new_x < MAP_W && new_y > 0 && new_y < MAP_H && state->map[(int)new_y][(int)new_x] == '0')
+	if (new_x > 0 && new_x < MAP_W && new_y > 0 && new_y < MAP_H && state->map->map[(int)new_y][(int)new_x] == '0')
 	{
 		state->player.pos.x = new_x;
 		state->player.pos.y = new_y;
