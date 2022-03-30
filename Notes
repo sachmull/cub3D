@@ -1,0 +1,30 @@
+posX posY 	represent player position
+dirX dirY	represent direction of the player
+planeX planeY	represents the camera plane (length)
+
+Ration between length of the direction and the camera plane determinate the fov
+	fov = 2 * atan(len_plane / len_dir)
+
+cameraX		x coordinate on the camera plane that represents the currently worked on column on screen
+			[-1, 1]
+
+rayDirX rayDirY		direction of the ray to cast
+mapX mapY			current square the ray is in
+
+sideDistX sideDistY		initially the distance the ray has to travel from its start position to the 
+						first x-side and the first y-side (will be incremented later)
+deltaDistX deltaDistY	distance the ray has to travel to go from one x side to the next, or from
+						one y side to the next
+stepX stepY				indicate wether the ray has to travel in the positive or negative
+						x/y direction (-1 or 1)
+perpWallDist			used to calculate the length of the array
+hit						shows when a wall is hit
+side					shows wether a x or y wall was hit
+
+// Textured Raycasting
+
+wallX	where exactly the wall was hit
+texX	x-coordinate of the vertical strip on the texture that should be drawn
+
+step	how much to increase the texture coordinate per screen pixel
+texPos	
