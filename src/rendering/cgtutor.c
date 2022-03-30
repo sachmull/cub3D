@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cgtutor.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:29:40 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 14:40:34 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/03/31 00:26:02 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void cgtutor(t_state *state)
 				side = 1;
 			}
 			// check if ray has hit a wall
-			if (state->map[mapy][mapx] != '0') hit = 1;
+			if (state->map->map[mapy][mapx] != '0') hit = 1;
 		}
 
 		// calculate distance projected on camera direction
@@ -113,7 +113,7 @@ void cgtutor(t_state *state)
 			texx = texture.width - texx - 1;
 		if (side == 1 && raydiry < 0)
 			texx = texture.width - texx - 1;
-		
+
 		// how much to increase the texture coordinate per screen pixel
 		double	step = 1.0 * texture.height / lineheight;
 		// starting texture coordinate
