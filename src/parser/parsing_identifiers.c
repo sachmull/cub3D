@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:27 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 00:21:57 by khammers         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:26:50 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static int	get_rgb_spawning(t_state *state, char *line)
 as the start of the map. */
 static int	get_identifiers(t_state *state, char *file)
 {
-	//pos_map == i - 1 //richtig????
 	int		i;
 	int		fd;
 	char	*line;
@@ -81,7 +80,7 @@ static int	get_identifiers(t_state *state, char *file)
 		get_rgb_spawning(state, line);
 		if (state->map->pos_map == -5 && line[0] != '\n' \
 			&& check_characters(line) == 0)
-			state->map->pos_map = i - 1;
+			state->map->pos_map = i;
 		ft_free_string(&line);
 		i++;
 	}

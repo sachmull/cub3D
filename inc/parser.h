@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 00:24:03 by khammers         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:59:39 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		map_error_check(t_state *state);
 int		check_identifiers(t_state *state);
 int		check_column(t_state *state, int x);
 int		check_row(t_state *state, int y);
-
+int		load_textures(t_state *state);
 /* Utils */
 int		get_to_pos(int pos, int fd);
 int		ft_isinstring(char *string, char c);
