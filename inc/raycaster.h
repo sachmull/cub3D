@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/31 00:25:24 by khammers         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:54:04 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ typedef struct s_map
 	int			rgb[6];
 } t_map;
 
+typedef struct	s_tex
+{
+	void	*tex;
+	int		width;
+	int		height;
+} t_tex;
 typedef struct s_state
 {
 	void		*mlx;
@@ -76,13 +82,14 @@ typedef struct s_state
 	t_img		img;
 	t_img		buffer;
 	int			mouse_x;
-	// char		**map;
 	t_player	player;
 	t_textures	textures;
+
 
 	struct s_map	*map;						//added Kathi
 	int		ceiling;
 	int		floor;
+	t_tex	*tex[4];
 }				t_state;
 
 #endif

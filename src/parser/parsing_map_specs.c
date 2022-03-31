@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:41 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 00:20:05 by khammers         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:27:17 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	get_map_height(t_state *state, char *file)
 	while (1)
 	{
 		line = get_next_line(fd);
-		if (line == NULL || ft_strchr(line, '1') == NULL)
+		if (line == NULL || (ft_strchr(line, '1') == NULL && ft_isalpha(line[0]) == 0))
 			break ;
 		ft_free_string(&line);
 		state->map->map_height++;

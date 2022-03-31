@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   tex_handling.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 00:08:31 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 14:03:36 by khammers         ###   ########.fr       */
+/*   Created: 2022/03/31 14:47:23 by khammers          #+#    #+#             */
+/*   Updated: 2022/03/31 15:00:22 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <parser.h>
 
-/* Check for 2 command line args, the last one of *.cub format. Return 0 if
-input is correct, print an error message and return -1 if not. */
-int	check_args(int argc, char **argv)
+/* Allocates memory for each texture (NO, SO, EA, WE)  */
+int	load_textures(t_state *state)
 {
-	char	*map_format;
+	int	i;
 
-	map_format = ".cub";
-	if (argv[1] == NULL || argc != 2)
+	i = 0;
+	while (i < 4)
 	{
-		ft_putstr_fd("Error\nNo valid map.\n", 1);
-		return (-1);
-	}
-	if (!(ft_strncmp((argv[1] - 4), map_format, 4)))
-	{
-		ft_putstr_fd("Error\nNo valid map in *.cub format.\n", 1);
-		return (-1);
+		state->tex[i] = ft_calloc(sizeof(t_tex), 1);
+		if (!state->tex[i])
+		{
+			ft_putstr_fd("Error\nMemory allocation failed\n", 1);
+			return (-1);
+		}
+		state->tex[i] = mlx_xpm_file_to_image(state->mlx,
+			state->map->path_text[i], &(state->tex[i]->width), &(state->tex[i]->height));
+		i++;
 	}
 	return (0);
 }

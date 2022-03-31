@@ -20,7 +20,8 @@ SRC =	src/main.c \
 		src/parser/check_error_walls_column.c	\
 		src/parser/map_error_handling_1.c		\
 		src/parser/get_next_line.c				\
-		src/parser/utils.c
+		src/parser/utils.c						\
+		src/parser/tex_handling.c				\
 
 
 INC = -Iinc -Imlx -Ilibft
