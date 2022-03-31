@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:29:40 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 14:40:34 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:59:24 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 void cgtutor(t_state *state)
 {
 	t_player		*player = &state->player;
-	t_img	texture = mu_new_xpm_img(state->mlx, "textures/redbrick.xpm");
+	t_img	texture = mu_new_xpm_img(state->mlx, "textures/wood.xpm");
+	t_img	w = mu_new_xpm_img(state->mlx, "textures/wood.xpm");
+	t_img	o = mu_new_xpm_img(state->mlx, "textures/stone.xpm");
+	t_img	n = mu_new_xpm_img(state->mlx, "textures/mossy.xpm");
+	t_img	s = mu_new_xpm_img(state->mlx, "textures/redbrick.xpm");
 	for (int x =0; x < WIN_W; ++x)
 	{
         // calculate ray position and direction
@@ -83,6 +87,18 @@ void cgtutor(t_state *state)
 			// check if ray has hit a wall
 			if (state->map[mapy][mapx] != '0') hit = 1;
 		}
+
+		// text/dir mapping
+		if (side == 1)
+			if (raydiry > 0)
+				texture = s;
+			else
+				texture = n;
+		else
+			if (raydirx > 0)
+				texture = o;
+			else
+				texture = w;
 
 		// calculate distance projected on camera direction
 		if (side == 0)	perpwalldist = (sidedistx - deltadistx);

@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 14:04:04 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/03/30 19:52:30 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ t_state	get_state(void)
 	void *mlx = mlx_init();
 	void *win = mlx_new_window(mlx, WIN_W, WIN_H, "cub3D");
 
-	map = malloc(4 * sizeof(char *));
+	map = malloc(7 * sizeof(char *));
 	map[0] = ft_strdup("1111111111111");
-	map[1] = ft_strdup("1000000000001");
-	map[2] = ft_strdup("1000100011001");
-	map[3] = ft_strdup("1111111111111");
+	map[1] = ft_strdup("1000001000001");
+	map[2] = ft_strdup("1000000000001");
+	map[3] = ft_strdup("1000001100001");
+	map[4] = ft_strdup("1000000011001");
+	map[5] = ft_strdup("1000000001001");
+	map[6] = ft_strdup("1111111111111");
 	return ((t_state)
 	{
 		.mlx = mlx,
@@ -34,8 +37,8 @@ t_state	get_state(void)
 		.map = map,
 		.player = (t_player)
 		{
-			.pos = (t_vec2){.x = 10.5, .y = 1.5},
-			.dir = (t_vec2){.x = -1, .y = 0},
+			.pos = (t_vec2){.x = 1.5, .y = 1.5},
+			.dir = (t_vec2){.x = 1, .y = 0},
 			.planex = 0,
 			.planey = 0.66,
 			.a = 0,

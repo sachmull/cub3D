@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 14:03:45 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:14:03 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define WIN_H 1024
  
 // place holder, should replaced with variables holding the actual calues
-# define MAP_H 4
+# define MAP_H 7
 # define MAP_W 13
 
 typedef enum e_result {ERR, OK}	t_result;

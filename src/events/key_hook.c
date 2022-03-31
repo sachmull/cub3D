@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:01:27 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 12:55:01 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/03/30 17:03:31 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ void	rotate(t_state *state, int dir)
 int	key_hook(int keycode, t_state *state)
 {
 	if (keycode == LEFT)
-		rotate(state, 1);
-	else if (keycode == RIGHT)
 		rotate(state, -1);
+	else if (keycode == RIGHT)
+		rotate(state, 1);
 	else if (keycode == W)
 		go(state, state->player.dir);
 	else if (keycode == S)
 		go(state, s_multiplication(state->player.dir, -1));
 	else if (keycode == A)
-		go(state, perpendicular_vec2(state->player.dir, COUNTER_CLOCKWISE));
-	else if (keycode == D)
 		go(state, perpendicular_vec2(state->player.dir, CLOCKWISE));
+	else if (keycode == D)
+		go(state, perpendicular_vec2(state->player.dir, COUNTER_CLOCKWISE));
 	else if (keycode == ESC)
 		exit_cub(state);
 	return (0);

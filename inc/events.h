@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:01:44 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/24 14:55:50 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:15:16 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct s_state t_state;
 # define ESC 53
 
 // Movement speed
-# define ROTATION_SPEED 0.1
-# define STEP_SIZE 0.3
+# define ROTATION_SPEED 0.05
+# define STEP_SIZE 0.1
 
 // Events
 # define KEY_DOWN 2
