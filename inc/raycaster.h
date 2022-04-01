@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 14:46:41 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:37:30 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,16 @@ typedef struct s_player
 // 	int			rgb[6];
 // } t_map;
 
-typedef struct	s_tex
+typedef struct s_tex
 {
 	void	*tex;
 	int		width;
 	int		height;
-} t_tex;
+}				t_tex;
 
-typedef enum e_keys	{W, A, S, D, LEFT, RIGHT, ESC, MOUSE, KEY_COUNT}	t_keys;
+typedef enum e_keys {W, A, S, D, LEFT, RIGHT, ESC, MOUSE, KEY_COUNT}	t_keys;
+
+typedef struct s_map	t_map;
 
 typedef struct s_state
 {
@@ -66,10 +68,10 @@ typedef struct s_state
 	t_player	player;
 	t_keys		pressed[KEY_COUNT];
 
-	struct s_map	*map;						//added Kathi
-	int		ceiling;
-	int		floor;
-	t_img	*tex[4];
+	t_map		*map;
+	int			ceiling;
+	int			floor;
+	t_img		*tex[4];
 }				t_state;
 
 #endif

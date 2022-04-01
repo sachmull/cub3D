@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:29:40 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 16:21:22 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:11:33 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,26 +45,44 @@ void cgtutor(t_state *state)
 		int	side; // was a NS or a EW wall hit
 
 		// calculate step and initial sideDist
+		// if (raydirx < 0)
+		// {
+		// 	stepx = -1;
+		// 	sidedistx = (player->pos.x - mapx) * deltadistx;
+		// } else
+		// {
+		// 	stepx = 1;
+		// 	sidedistx = (mapx + 1.0 - player->pos.x) * deltadistx;
+		// }
+		// if (raydiry < 0)
+		// {
+		// 	stepy = -1;
+		// 	sidedisty = (player->pos.y - mapy) * deltadisty;
+		// }
+		// else
+		// {
+		// 	stepy = 1;
+		// 	sidedisty = (mapy + 1.0 - player->pos.y) * deltadisty;
+		// }
+
 		if (raydirx < 0)
-		{
 			stepx = -1;
+		if (raydirx < 0)
 			sidedistx = (player->pos.x - mapx) * deltadistx;
-		} else
-		{
+		if (raydirx >= 0)
 			stepx = 1;
+		if (raydirx >= 0)
 			sidedistx = (mapx + 1.0 - player->pos.x) * deltadistx;
-		}
+
 		if (raydiry < 0)
-		{
 			stepy = -1;
+		if (raydiry < 0)
 			sidedisty = (player->pos.y - mapy) * deltadisty;
-		}
-		else
-		{
+		if (raydiry >= 0)
 			stepy = 1;
+		if (raydiry >= 0)
 			sidedisty = (mapy + 1.0 - player->pos.y) * deltadisty;
-		}
-		
+
 		/// perform DDA
 		while (hit == 0)
 		{

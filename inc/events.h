@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:01:44 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 12:35:43 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:35:57 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <raycaster.h>
 
-typedef struct s_state t_state;
-typedef struct s_vec2 t_vec2;
+typedef struct s_state	t_state;
+typedef struct s_vec2	t_vec2;
 
 // Keycodes
 # define W_KC 13
@@ -42,17 +42,17 @@ typedef struct s_vec2 t_vec2;
 # define DESTROY 17
 
 // key_hook.c
-int	key_down(int kc, t_state *state);
-int	key_up(int kc, t_state *state);
-int	exit_cub(t_state *state);
+int		key_down(int kc, t_state *state);
+int		key_up(int kc, t_state *state);
+int		exit_cub(t_state *state);
 
 // loop_hook.c
-int	loop_hook(t_state *state);
+int		loop_hook(t_state *state);
 
 // mouse_hook.c
-int	mouse_down(int button, int x, int y, t_state *state);
-int	mouse_up(int button, int x, int y, t_state *state);
-int	mouse_move(int x, int y, t_state *state);
+int		mouse_down(int button, int x, int y, t_state *state);
+int		mouse_up(int button, int x, int y, t_state *state);
+int		mouse_move(int x, int y, t_state *state);
 
 // movement.c
 void	go(t_state *state, t_vec2 dir);

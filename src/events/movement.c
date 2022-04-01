@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 11:51:27 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 11:58:30 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:29:12 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	go(t_state *state, t_vec2 dir)
 	const double	new_x = state->player.pos.x + STEP_SIZE * dir.x;
 	const double	new_y = state->player.pos.y + STEP_SIZE * dir.y;
 
-	if (new_x > 0 && new_x < state->map->map_width && new_y > 0 && new_y < state->map->map_height && state->map->map[(int)new_y][(int)new_x] == '0')
+	if (new_x > 0 && new_x < state->map->map_width && new_y > 0
+		&& new_y < state->map->map_height
+		&& state->map->map[(int)new_y][(int)new_x] == '0')
 	{
 		state->player.pos.x = new_x;
 		state->player.pos.y = new_y;
@@ -29,10 +31,14 @@ void	rotate(t_state *state, int dir)
 	const double	olddirx = state->player.dir.x;
 	const double	oldplanex = state->player.plane.x;
 
-	state->player.dir.x = olddirx * cos(dir * ROTATION_SPEED) - state->player.dir.y * sin(dir * ROTATION_SPEED);
-	state->player.dir.y = olddirx * sin(dir * ROTATION_SPEED) + state->player.dir.y * cos(dir * ROTATION_SPEED);
-	state->player.plane.x = oldplanex * cos(dir * ROTATION_SPEED) - state->player.plane.y * sin(dir * ROTATION_SPEED);
-	state->player.plane.y = oldplanex * sin(dir * ROTATION_SPEED) + state->player.plane.y * cos(dir * ROTATION_SPEED);
+	state->player.dir.x = olddirx * cos(dir * ROTATION_SPEED)
+		- state->player.dir.y * sin(dir * ROTATION_SPEED);
+	state->player.dir.y = olddirx * sin(dir * ROTATION_SPEED)
+		+ state->player.dir.y * cos(dir * ROTATION_SPEED);
+	state->player.plane.x = oldplanex * cos(dir * ROTATION_SPEED)
+		- state->player.plane.y * sin(dir * ROTATION_SPEED);
+	state->player.plane.y = oldplanex * sin(dir * ROTATION_SPEED)
+		+ state->player.plane.y * cos(dir * ROTATION_SPEED);
 }
 
 void	movement(t_state *state)

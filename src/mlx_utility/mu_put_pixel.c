@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:51:32 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 14:13:23 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:30:20 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	mu_put_pixel(t_img *img, int x, int y, int color)
 {
-	char *dst;
+	char	*dst;
 
 	if (x >= 0 && x < img->width && y >= 0 && y < img->height)
 	{

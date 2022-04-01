@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 17:16:03 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/31 20:27:20 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:31:02 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static void	set_val(t_state *state, int x, int y, char dir)
 		state->player.dir = (t_vec2){.x = 0, .y = 1};
 	else
 		state->player.dir = (t_vec2){.x = -1, .y = 0};
-	state->player.plane = perpendicular_vec2(state->player.dir, COUNTER_CLOCKWISE);
+	state->player.plane = perpendicular_vec2(state->player.dir,
+			COUNTER_CLOCKWISE);
 	state->map->map[y][x] = '0';
 }
 
