@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 12:42:59 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:01:53 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int	main(int argc, char **argv)
 	t_state	state;
 
 	state = get_state();
-	init_state(&state);					//added Kathi
 	if (init_state(&state) != 0)
 		return (1);
 	if (check_args(argc, argv) == -1)

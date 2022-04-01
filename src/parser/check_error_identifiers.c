@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:08:35 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 00:08:36 by khammers         ###   ########.fr       */
+/*   Updated: 2022/03/31 16:56:46 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ static int	get_rgb(t_state *state)
 /* Transforms rgb values into one int using bitshifting. */
 static void	transform_rgb(t_state *state )
 {
-	state->ceiling = ((state->map->rgb[0] & 0xff) << 16) + \
+	state->map->ceiling = ((state->map->rgb[0] & 0xff) << 16) + \
 		((state->map->rgb[1] & 0xff) << 8) + (state->map->rgb[2] & 0xff);
-	state->floor = ((state->map->rgb[3] & 0xff) << 16) + \
+	state->map->floor = ((state->map->rgb[3] & 0xff) << 16) + \
 		((state->map->rgb[4] & 0xff) << 8) + (state->map->rgb[5] & 0xff);
 }
 

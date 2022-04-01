@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 17:36:54 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:05:52 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,18 @@
 # include <libft.h>
 # include <raycaster.h>
 
-// typedef struct s_map
-// {
-// 	int			map_height;
-// 	int			map_width;
-// 	int			pos_map;
-// 	char		**map;
-// 	char		**path_text;
-// 	char		**colours;
-// 	int			rgb[6];
-// } t_map;
-
-// typedef struct s_state
-// {
-// 	t_map	*map;
-// 	int		ceiling;
-// 	int		floor;
-// 	// char	**xpm;
-// } t_state;
+typedef struct s_map
+{
+	int		map_height;
+	int		map_width;
+	int		pos_map;
+	char	**map;
+	char	**path_text;
+	char	**colours;
+	int		rgb[6];
+	int		ceiling;
+	int		floor;
+} t_map;
 
 #define BUFFER_SIZE 1
 

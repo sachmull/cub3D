@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 12:20:06 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:05:57 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdio.h>
 # include <math.h>
 # include <vec2.h>
+# include <parser.h>
 
 # define PI 3.14159265359
 # define WIN_W 2048
@@ -34,16 +35,16 @@ typedef struct s_player
 	t_vec2	plane;
 }				t_player;
 
-typedef struct s_map
-{
-	int			map_height;
-	int			map_width;
-	int			pos_map;
-	char		**map;
-	char		**path_text;
-	char		**colours;
-	int			rgb[6];
-} t_map;
+// typedef struct s_map
+// {
+// 	int			map_height;
+// 	int			map_width;
+// 	int			pos_map;
+// 	char		**map;
+// 	char		**path_text;
+// 	char		**colours;
+// 	int			rgb[6];
+// } t_map;
 
 typedef struct	s_tex
 {
@@ -66,7 +67,7 @@ typedef struct s_state
 	struct s_map	*map;						//added Kathi
 	int		ceiling;
 	int		floor;
-	t_tex	*tex[4];
+	t_img	*tex[4];
 }				t_state;
 
 #endif
