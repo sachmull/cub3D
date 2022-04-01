@@ -6,7 +6,7 @@ SRC =	src/main.c \
 		src/mlx_utility/mu_draw_rect.c src/mlx_utility/mu_new_img.c src/mlx_utility/mu_new_rect.c \
 		src/mlx_utility/mu_new_trgb.c src/mlx_utility/mu_put_pixel.c src/mlx_utility/mu_new_xpm_img.c \
 		src/events/key_hook.c src/events/loop_hook.c src/events/mouse_hook.c src/events/movement.c \
-		src/rendering/cgtutor.c \
+		src/rendering/cgtutor.c src/rendering/minimap.c \
 		src/vec2/perpendicular_vec2.c src/vec2/s_multiplication.c	\
 		src/parser/check_args.c				\
 		src/parser/parsing.c					\

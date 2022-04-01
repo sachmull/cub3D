@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:36:41 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/30 15:50:05 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:31:12 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ t_rect	mu_new_rect(int x, int y, int width, int height);
 int		mu_new_trgb(int t, int r, int g, int b);
 void	mu_draw_rect(t_img *img, t_rect rect, int color);
 int		mu_put_pixel(t_img *img, int x, int y, int color);
-t_img	mu_new_xpm_img(void *mlx_ptr, char *filepath);
+t_img	*mu_new_xpm_img(void *mlx_ptr, char *filepath);
 
 #endif

@@ -6,12 +6,15 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 13:05:57 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:46:41 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RAYCASTER_H
 # define RAYCASTER_H
+
+#include <time.h>
+#include <stdio.h>
 
 # include <mlx.h>
 # include <stdlib.h>
@@ -19,7 +22,6 @@
 # include <libft.h>
 # include <events.h>
 # include <rendering.h>
-# include <stdio.h>
 # include <math.h>
 # include <vec2.h>
 # include <parser.h>

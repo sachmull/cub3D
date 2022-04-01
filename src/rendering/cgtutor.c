@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:29:40 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 12:58:16 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 16:21:22 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 void cgtutor(t_state *state)
 {
-	t_player		*player = &state->player;
-	t_img	texture = mu_new_xpm_img(state->mlx, "textures/wood.xpm");
-	t_img	w = mu_new_xpm_img(state->mlx, "textures/wood.xpm");
-	t_img	o = mu_new_xpm_img(state->mlx, "textures/stone.xpm");
-	t_img	n = mu_new_xpm_img(state->mlx, "textures/mossy.xpm");
-	t_img	s = mu_new_xpm_img(state->mlx, "textures/redbrick.xpm");
+	t_player	*player = &state->player;
+	t_img		texture;
 
 	for (int x =0; x < WIN_W; ++x)
 	{
@@ -68,7 +64,7 @@ void cgtutor(t_state *state)
 			stepy = 1;
 			sidedisty = (mapy + 1.0 - player->pos.y) * deltadisty;
 		}
-
+		
 		/// perform DDA
 		while (hit == 0)
 		{
@@ -92,14 +88,14 @@ void cgtutor(t_state *state)
 		// text/dir mapping
 		if (side == 1)
 			if (raydiry > 0)
-				texture = s;
+				texture = *state->tex[2]; //s;
 			else
-				texture = n;
+				texture = *state->tex[0]; //n;
 		else
 			if (raydirx > 0)
-				texture = o;
+				texture = *state->tex[1]; //o;
 			else
-				texture = w;
+				texture = *state->tex[3]; //w;
 
 		// calculate distance projected on camera direction
 		if (side == 0)	perpwalldist = (sidedistx - deltadistx);
@@ -140,18 +136,13 @@ void cgtutor(t_state *state)
 			// cast the texture coordinate to integer, and mask with (textHeight - 1) in case of overflow
 			int	texy = (int)texPos & (texture.height - 1);
 			texPos += step;
-			(void)texy;
 			unsigned int	color = ((unsigned int *)texture.addr)[texture.width * texy + texx];
-			// make color darker for y-sides: R, G, and B byte each divided through two with a shift and an and
-			if (side == 1)
-				color = (color >> 1) & 8355711;
-			// printf("%d %d\n", x, y);
 			mu_put_pixel(&state->img, x, y, color);
 		}
 
 		// draw the pixels of the stripe as a vertical line
-		mu_draw_rect(&state->img, mu_new_rect(x, 0, 1, drawstart), 0x000000FF);
-		mu_draw_rect(&state->img, mu_new_rect(x, drawend + 1, 1, WIN_H - drawend), 0x000F0F0F);
+		mu_draw_rect(&state->img, mu_new_rect(x, 0, 1, drawstart), state->map->ceiling);
+		mu_draw_rect(&state->img, mu_new_rect(x, drawend + 1, 1, WIN_H - drawend), state->map->floor);
 	}
 	mlx_put_image_to_window(state->mlx, state->win, state->img.img, 0, 0);
 }
