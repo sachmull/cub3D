@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/31 16:22:50 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:20:06 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,36 +27,12 @@
 # define WIN_W 2048
 # define WIN_H 1024
 
-// place holder, should replaced with variables holding the actual calues
-# define MAP_H 4	//state->map->map_height
-# define MAP_W 13	//state->map->map_width
-
-typedef enum e_result {ERR, OK}	t_result;
-
 typedef struct s_player
 {
 	t_vec2	pos;
 	t_vec2	dir;
-	double	planex;
-	double	planey;
-	// not used, left for compilation reasons
-	double	a;
-	double	fov;
+	t_vec2	plane;
 }				t_player;
-
-# define TEXTURE_IDENTIFIERS {"NO", "EA", "SO", "WE", "F", "C"}
-
-# define ABSOLUTE_IDENTIFIERS {"F", "C"}
-typedef enum e_absolutes {F, C, ABS_COUNT}	t_abs;
-
-# define SIDE_IDENTIFIERS {"NO", "EA", "SO", "WE"}
-typedef enum e_side {NORTH, EAST, SOUTH, WEST, SIDE_COUNT} t_side;
-
-typedef struct s_textures
-{
-	t_img	sides[SIDE_COUNT];
-	int		abs[ABS_COUNT];
-}				t_textures;
 
 typedef struct s_map
 {
@@ -75,16 +51,17 @@ typedef struct	s_tex
 	int		width;
 	int		height;
 } t_tex;
+
+typedef enum e_keys	{W, A, S, D, LEFT, RIGHT, ESC, MOUSE, KEY_COUNT}	t_keys;
+
 typedef struct s_state
 {
 	void		*mlx;
 	void		*win;
 	t_img		img;
-	t_img		buffer;
 	int			mouse_x;
 	t_player	player;
-	t_textures	textures;
-
+	t_keys		pressed[KEY_COUNT];
 
 	struct s_map	*map;						//added Kathi
 	int		ceiling;

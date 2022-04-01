@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_texture.c                                    :+:      :+:    :+:   */
+/*   loop_hook.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 18:15:29 by sachmull          #+#    #+#             */
-/*   Updated: 2022/03/18 12:43:29 by sachmull         ###   ########.fr       */
+/*   Created: 2022/04/01 11:49:42 by sachmull          #+#    #+#             */
+/*   Updated: 2022/04/01 12:02:48 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <parser.h>
+#include <events.h>
 
-t_result	parse_texture(t_state *state, char *line)
+int	loop_hook(t_state *state)
 {
-	if (!line)
-		return (ERR);
-	else if (is_empty(line))
-		return (OK);
-	else if (is_side(line))
-		return (parse_side(state, line));
-	else if (is_abs(line))
-		return (parse_abs(state, line));
-	else
-		return (ERR);
+	movement(state);
+	cgtutor(state);
+	return (0);
 }

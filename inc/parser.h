@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 14:59:39 by khammers         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:36:54 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@
 #define BUFFER_SIZE 1
 
 // int		main(int argc, char **argv);
+/* Check and set the players start coordinates */
+void	set_player_pos(t_state *state);
 
 /* Input verification and functions for map parsing & map error handling. */
 int		check_args(int argc, char **argv);
