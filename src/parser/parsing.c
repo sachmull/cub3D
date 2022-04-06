@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:50 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 14:59:32 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:28:06 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	parsing(t_state *state, char **argv)
 		return (-1);
 	if (parse_map(state, argv) != 0)
 		return (-1);
-	print_map(state);
+	// print_map(state);
 	if (map_error_check(state) != 0)
 		return (-1);
 	if (load_textures(state) != 0)
