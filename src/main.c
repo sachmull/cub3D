@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/05 16:14:59 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:27:33 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	init_state(t_state *state)
 	state->map->map_width = 0;
 	state->map->map = NULL;
 	state->map->pos_map = -5;
-	state->map->path_text = ft_calloc(sizeof(char *), 5);
+	state->map->path_text = ft_calloc(sizeof(char *), 5);			//shit freen
 	state->map->colours = ft_calloc(sizeof(char *), 4);
 	if (state->map->path_text == NULL || state->map->path_text == NULL)
 	{
@@ -78,12 +78,3 @@ int	main(int argc, char **argv)
 	// ft_free_all(&state);			//added Kathi
 	return (EXIT_SUCCESS);
 }
-
-
-
-/* // void	ft_free_all(t_state *state)
-// {
-// 	free_colours(state);
-// 	free_path_text(state);
-// 	free_map(state);
-// } */
