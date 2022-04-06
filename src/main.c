@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 16:03:08 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:14:59 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,6 @@ t_state	get_state(void)
 	});
 }
 
-int	render(t_state *state)
-{
-	// TIME DIFF
-	struct timespec tstart = {0,0}, tend={0,0};
-	clock_gettime(CLOCK_MONOTONIC,  &tstart);
-	// ---------
-	// step_by_step(state);
-	// dda(state);
-	// permadi(state);
-	cgtutor(state);
-	// TIME DIFF
-	clock_gettime(CLOCK_MONOTONIC, &tend);
-	// printf("FPS %.5f\n",
-	// 	1 /
-	// 	(((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) -
-	// 	((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec)));
-	// ---------
-	return (1);
-}
-
 int	main(int argc, char **argv)
 {
 	t_state	state;
@@ -94,7 +74,6 @@ int	main(int argc, char **argv)
 	mlx_hook(state.win, MOUSE_DOWN, 0, mouse_down, &state);
 	mlx_hook(state.win, MOUSE_UP, 0, mouse_up, &state);
 	mlx_hook(state.win, MOUSE_MOVE, 0, mouse_move, &state);
-	//mlx_mouse_hide(state.mlx, state.win);
 	mlx_loop(state.mlx);
 	// ft_free_all(&state);			//added Kathi
 	return (EXIT_SUCCESS);

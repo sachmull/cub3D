@@ -6,17 +6,18 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:01:27 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 17:26:14 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/06 16:25:57 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <events.h>
 
-int	exit_cub(t_state *state)
-{
-	(void)state;
-	exit(0);
-}
+// int	exit_cub(t_state *state)
+// {
+// 	(void)state;
+	
+// 	exit(0);
+// }
 
 int	key_down(int kc, t_state *state)
 {

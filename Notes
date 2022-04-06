@@ -27,4 +27,9 @@ wallX	where exactly the wall was hit
 texX	x-coordinate of the vertical strip on the texture that should be drawn
 
 step	how much to increase the texture coordinate per screen pixel
-texPos	
+texPos
+
+
+
+
+SEGFAULT wenn texture file nicht existiert

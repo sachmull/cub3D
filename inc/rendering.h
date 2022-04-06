@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 12:23:08 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 17:33:11 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/05 16:45:40 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_state	t_state;
 
 typedef struct s_dda
 {
+	t_img	texture;
 	double	camerax;
 	double	raydirx;
 	double	raydiry;
@@ -30,6 +31,8 @@ typedef struct s_dda
 	int		mapy;
 	double	sidedistx;
 	double	sidedisty;
+	double	deltadistx;
+	double	deltadisty;
 	double	perpwalldist;
 	int		stepx;
 	int		stepy;

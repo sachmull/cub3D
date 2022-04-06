@@ -23,6 +23,7 @@ SRC =	src/main.c \
 		src/parser/utils.c						\
 		src/parser/tex_handling.c				\
 		src/parser/set_player_pos.c				\
+		src/exit/exit_cub.c
 
 
 INC = -Iinc -Imlx -Ilibft

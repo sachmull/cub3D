@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:01:44 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 17:35:57 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/06 16:37:17 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define EVENTS_H
 
 # include <raycaster.h>
+# include <exit.h>
 
 typedef struct s_state	t_state;
 typedef struct s_vec2	t_vec2;
@@ -44,7 +45,7 @@ typedef struct s_vec2	t_vec2;
 // key_hook.c
 int		key_down(int kc, t_state *state);
 int		key_up(int kc, t_state *state);
-int		exit_cub(t_state *state);
+// int		exit_cub(t_state *state);
 
 // loop_hook.c
 int		loop_hook(t_state *state);
