@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 16:24:21 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/06 20:11:54 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:11:42 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,15 @@ void	ft_free_all(t_state *state)
 	// free_path_text(state);
 	free_map(state);
 	free_textures(state);
+	if (state->map)
+	{
+		free(state->map);
+		state->map = NULL;
+	}
+	free(state->map->path_text);
+	state->map->path_text = NULL;
+	free(state->map->colours);
+	state->map->colours = NULL;
 }
 
 int	exit_cub(t_state *state)
