@@ -2,6 +2,31 @@ NAME = cub3D
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
+define LOGO
+                                                                
+                                    .--,-``-.                  
+  ,----..                          /   /     '.      ,---,     
+ /   /   \                ,---,   / ../        ;   .'  .' `\   
+|   :     :         ,--,,---.'|   \ ``\  .`-    ',---.'     \  
+.   |  ;. /       ,'_ /||   | :    \___\/   \   :|   |  .`\  | 
+.   ; /--`   .--. |  | ::   : :         \   :   |:   : |  '  | 
+;   | ;    ,'_ /| :  . |:     |,-.      /  /   / |   ' '  ;  : 
+|   : |    |  ' | |  . .|   : '  |      \  \   \ '   | ;  .  | 
+.   | '___ |  | ' |  | ||   |  / :  ___ /   :   ||   | :  |  ' 
+'   ; : .'|:  | : ;  ; |'   : |: | /   /\   /   :'   : | /  ;  
+'   | '/  :'  :  `--'   \   | '/ :/ ,,/  ',-    .|   | '` ,/   
+|   :    / :  ,      .-./   :    |\ ''\        ; ;   :  .'     
+ \   \ .'   `--`----'   /    \  /  \   \     .'  |   ,.'       
+  `---`                 `-'----'    `--`-,,-'    '---'         
+                                                               
+endef
+export LOGO
+
+RESET = \033[0m
+GREEN = \033[32m
+YELLOW = \033[33m
+BLUE = \033[34m
+
 SRC =	src/main.c \
 		src/mlx_utility/mu_draw_rect.c src/mlx_utility/mu_new_img.c src/mlx_utility/mu_new_rect.c \
 		src/mlx_utility/mu_new_trgb.c src/mlx_utility/mu_put_pixel.c src/mlx_utility/mu_new_xpm_img.c \
@@ -36,18 +61,28 @@ LIBFT = ./libft/libft.a
 all: $(NAME)
 
 $(NAME): $(SRC) $(MLX) $(LIBFT)
+	@echo "$(YELLOW)\nBuilding $(NAME) ...$(RESET)"
 	@$(CC) $(CFLAGS) $(SRC) $(INC) $(MLX) $(LMLX) $(LIBFT) -o $(NAME)
+	@echo "$(GREEN)$(NAME) successfully build\n$(RESET)"
+	@echo "$(BLUE)"
+	@echo "$$LOGO"
+	@echo "$(RESET)"
 
 $(MLX):
+	@echo "$(YELLOW)\nBuilding MLX ...$(RESET)"
 	@make -C mlx
+	@echo "$(GREEN)MLX successfully build\n$(RESET)"
 
 $(LIBFT):
+	@echo "$(YELLOW)\nBuilding Libft ...$(RESET)"
 	@make -C libft
+	@echo "$(GREEN)Libft successfully build\n$(RESET)"
 
 clean:
+	@echo "$(YELLOW)\nCleaning the place\n$(RESET)"
 	@make clean -C libft
 
-fclean:
+fclean: clean
 	@rm $(NAME)
 	@make fclean -C libft
 	@make clean -C mlx
