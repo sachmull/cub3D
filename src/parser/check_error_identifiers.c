@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:08:35 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/06 20:09:07 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:20:31 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	transform_rgb(t_state *state )
 and a valid path for texture paths. */
 int	check_identifiers(t_state *state)
 {
-	if (ft_arrlen(state->map->path_text) != 4
+	if (ft_arrlen(state->map->path_text) != 4	//nicht länge kontrollieren sondern Inhalt
 		|| ft_arrlen(state->map->colours) != 2
 		|| state->map->pos_map == -5)
 		return (-1);

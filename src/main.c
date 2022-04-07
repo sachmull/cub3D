@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 18:12:05 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:21:24 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	init_state(t_state *state)
 	}
 	state->map->colours[2] = NULL;
 	state->map->path_text[4] = NULL;
-	state->img_status = 0;
 }
 
 t_state	get_state(void)
@@ -56,7 +55,6 @@ t_state	get_state(void)
 
 int	main(int argc, char **argv)
 {
-	//müssen wir am ende nochmal exit_cub aufrufen?
 	t_state	state;
 
 	state = get_state();
