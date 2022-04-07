@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 17:42:54 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:50:31 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ int	main(int argc, char **argv)
 
 	state = get_state();
 	if (init_state(&state) != 0)
-		return (1);
+		;//return (1);
 	if (check_args(argc, argv) == -1)
-		return (1);
+		; //return (1);
 	if (parsing(&state, argv) == -1)
-		return (1);
+		;// return (1);
 	if (state.error != 0)
 		exit_cub(&state);
 	set_player_pos(&state);
