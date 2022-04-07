@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 16:34:53 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/07 17:21:24 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:46:21 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ static void	free_textures(t_state *state)
 		}
 		i++;
 	}
-	//abort with this free
-	// free(&state->tex);
 }
 
 /* Frees memory area used to save gamefield in 2D array. */
@@ -55,7 +53,7 @@ static void	free_map(t_state *state)
 	}
 }
 
-static void	free_colours_textures(t_state *state)
+static void	free_colours(t_state *state)
 {
 	int	i;
 
@@ -74,12 +72,33 @@ static void	free_colours_textures(t_state *state)
 		free(state->map->colours);
 		state->map->colours = NULL;
 	}
-	ft_free_strarray(&state->map->path_text);
+}
+
+static void	free_path_textures(t_state *state)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (state->map->path_text[i])
+		{
+			free(state->map->path_text[i]);
+			state->map->path_text[i] = NULL;
+		}
+		i++;
+	}
+	if (state->map->path_text)
+	{
+		free(state->map->path_text);
+		state->map->path_text = NULL;
+	}
 }
 
 void	free_state(t_state *state)
 {
-	free_colours_textures(state);
+	free_colours(state);
+	free_path_textures(state);
 	free_map(state);
 	free_textures(state);
 	if (state->map)

@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/06 20:27:33 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:42:54 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ static int	init_state(t_state *state)
 	if (state->map->path_text == NULL || state->map->path_text == NULL)
 	{
 		ft_putstr_fd("Error\nMemory allocation error\n", 1);
-		// ft_free_all(state);
-		return (-1);
+		exit_cub(state);
 	}
 	state->map->colours[2] = NULL;
 	state->map->path_text[4] = NULL;
@@ -65,8 +64,9 @@ int	main(int argc, char **argv)
 		return (1);
 	if (parsing(&state, argv) == -1)
 		return (1);
+	if (state.error != 0)
+		exit_cub(&state);
 	set_player_pos(&state);
-
 	mlx_loop_hook(state.mlx, loop_hook, &state);
 	mlx_hook(state.win, KEY_DOWN, 0, key_down, &state);
 	mlx_hook(state.win, KEY_UP, 0, key_up, &state);

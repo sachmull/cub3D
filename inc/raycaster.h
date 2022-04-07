@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycaster.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 17:37:30 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:42:41 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,6 @@ typedef struct s_player
 	t_vec2	plane;
 }				t_player;
 
-// typedef struct s_map
-// {
-// 	int			map_height;
-// 	int			map_width;
-// 	int			pos_map;
-// 	char		**map;
-// 	char		**path_text;
-// 	char		**colours;
-// 	int			rgb[6];
-// } t_map;
-
 typedef struct s_tex
 {
 	void	*tex;
@@ -72,6 +61,7 @@ typedef struct s_state
 	int			ceiling;
 	int			floor;
 	t_img		*tex[4];
+	int			error;
 }				t_state;
 
 #endif
