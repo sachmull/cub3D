@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:45 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 14:27:22 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:19:36 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	get_to_pos(int pos, int fd)
 	}
 	if (line == NULL)
 		return (1);
+	ft_free_string(&line);
 	return (0);
 }
 

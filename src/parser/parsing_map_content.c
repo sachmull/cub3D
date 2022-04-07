@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:35 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 00:19:59 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:18:38 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static int	read_map_grid(t_state *state, int fd)
 		line = get_next_line(fd);
 		y++;
 	}
+	ft_free_string(&line);
 	return (0);
 }
 

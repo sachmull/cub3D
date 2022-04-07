@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:08:35 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 16:56:46 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:09:07 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,29 +72,5 @@ int	check_identifiers(t_state *state)
 	if (get_rgb(state) != 0)
 		return (-1);
 	transform_rgb(state);
-	// //HOW TO CHECK FOR VALID PATH TO TEXTURE??? MINILIBX FUNCTION
-	//similar to open but minilibx functino
 	return (0);
 }
-
-
-
-/* Checks for a valid texture path. */
-// static int	check_identifier_content(char	**string)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (string[i])
-// 	{
-// 		if (i == 0 && ft_strlen(string[i]) != 2)
-// 			return (-1);
-// 		if (i == 1 && ft_strncmp(string[i], "/", 1) != 0
-// 			&& (ft_strncmp(string[i], ".", 1) != 0))
-// 			return (-1);
-// 		i++;
-// 	}
-// 	if (i != 1)
-// 		return (-1);
-// 	return (0);
-// }

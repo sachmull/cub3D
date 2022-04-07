@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:10:23 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 00:10:24 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/06 20:17:22 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 /* Frees a string passed with it's address. */
 void	ft_free_string(char **string)
 {
-	int	i;
-
-	i = 0;
 	if (!*string)
 		return ;
 	free(*string);
