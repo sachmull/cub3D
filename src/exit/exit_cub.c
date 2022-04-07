@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_cub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 16:24:21 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 14:11:42 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:48:44 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,15 @@ static void	free_map(t_state *state)
 
 void	ft_free_all(t_state *state)
 {
+	int	i;
+
+	i = 0;
+	while (i < 4)
+		free(state->map->path_text[i++]);
+	free(state->map->path_text);
+	state->map->path_text = NULL;
+	free(state->map->colours);
+	state->map->colours = NULL;
 	// free_colours(state);
 	// free_path_text(state);
 	free_map(state);
@@ -60,15 +69,18 @@ void	ft_free_all(t_state *state)
 		free(state->map);
 		state->map = NULL;
 	}
-	free(state->map->path_text);
-	state->map->path_text = NULL;
-	free(state->map->colours);
-	state->map->colours = NULL;
+}
+
+void	free_mlx(t_state *state)
+{
+	mlx_destroy_image(state->mlx, state->img.img);
+	mlx_destroy_window(state->mlx, state->win);
+	free(state->mlx);
 }
 
 int	exit_cub(t_state *state)
 {
-	(void)state;
 	ft_free_all(state);
+	free_mlx(state);
 	exit(0);
 }
