@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 17:42:54 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:12:05 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include <time.h>
 #include <parser.h>
 
-static int	init_state(t_state *state)
+static void	init_state(t_state *state)
 {
 	state->map = ft_calloc(sizeof(t_map), 1);
 	if (state->map == NULL)
 	{
 		ft_putstr_fd("Error\nMemory allocation error\n", 1);
-		return (-1);
+		exit_cub(state);
 	}
 	state->map->map_height = 0;
 	state->map->map_width = 0;
 	state->map->map = NULL;
 	state->map->pos_map = -5;
-	state->map->path_text = ft_calloc(sizeof(char *), 5);			//shit freen
+	state->map->path_text = ft_calloc(sizeof(char *), 5);
 	state->map->colours = ft_calloc(sizeof(char *), 4);
 	if (state->map->path_text == NULL || state->map->path_text == NULL)
 	{
@@ -35,7 +35,7 @@ static int	init_state(t_state *state)
 	}
 	state->map->colours[2] = NULL;
 	state->map->path_text[4] = NULL;
-	return (0);
+	state->img_status = 0;
 }
 
 t_state	get_state(void)
@@ -53,18 +53,17 @@ t_state	get_state(void)
 	});
 }
 
+
 int	main(int argc, char **argv)
 {
+	//müssen wir am ende nochmal exit_cub aufrufen?
 	t_state	state;
 
 	state = get_state();
-	if (init_state(&state) != 0)
-		return (1);
+	init_state(&state);
 	if (check_args(argc, argv) == -1)
-		return (1);
+		exit_cub(&state);
 	if (parsing(&state, argv) == -1)
-		return (1);
-	if (state.error != 0)
 		exit_cub(&state);
 	set_player_pos(&state);
 	mlx_loop_hook(state.mlx, loop_hook, &state);
@@ -75,6 +74,5 @@ int	main(int argc, char **argv)
 	mlx_hook(state.win, MOUSE_UP, 0, mouse_up, &state);
 	mlx_hook(state.win, MOUSE_MOVE, 0, mouse_move, &state);
 	mlx_loop(state.mlx);
-	// ft_free_all(&state);			//added Kathi
 	return (EXIT_SUCCESS);
 }

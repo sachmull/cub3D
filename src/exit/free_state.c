@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 16:34:53 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/07 17:46:21 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:13:45 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	free_textures(t_state *state)
 	i = 0;
 	while (i < 4)
 	{
-		if (state->tex[i]->img)
+		if (state->img_status != 0)
 			mlx_destroy_image(state->mlx, state->tex[i]->img);
 		if (state->tex[i])
 		{

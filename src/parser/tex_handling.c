@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:47:23 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/06 20:29:10 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:12:48 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	load_textures(t_state *state)
 			ft_putstr_fd("Error\nXPM file could not be put to image\n", 1);
 			return (-1);
 		}
+		state->img_status++;
 		i++;
 	}
 	return (0);
