@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:29:40 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 16:40:42 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 21:16:29 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	init_dda_data(t_dda *d, t_state *state, int column)
 
 void	dda(t_dda *data, t_state *state)
 {
-	while (state->map->map[data->mapy][data->mapx] == '0')
+	while (state->map->map[data->mapy][data->mapx] == '0'
+		|| state->map->map[data->mapy][data->mapx] == 'O')
 	{
 		if (data->sidedistx < data->sidedisty)
 		{
@@ -105,8 +106,8 @@ void	draw(t_dda *data, t_state *state, int column)
 		data->texpos += data->step;
 		color = ((unsigned int *)data->texture.addr) \
 			[data->texture.width * texy + data->texx];
-		// if (state->map->map[data->mapy][data->mapx] == 'D')
-		// 	color = mu_new_trgb(0, 92, 79, 44);
+		if (state->map->map[data->mapy][data->mapx] == 'D')
+			color = mu_new_trgb(0, 92, 79, 44);
 		mu_put_pixel(&state->img, column, y, color);
 		++y;
 	}

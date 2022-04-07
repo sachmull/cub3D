@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:01:44 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/06 16:37:17 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 21:10:00 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_vec2	t_vec2;
 # define A_KC 0
 # define S_KC 1
 # define D_KC 2
+# define F_KC 3
 
 # define LEFT_KC 123
 # define RIGHT_KC 124

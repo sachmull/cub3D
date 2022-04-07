@@ -26,8 +26,8 @@ side					shows wether a x or y wall was hit
 wallX	where exactly the wall was hit
 texX	x-coordinate of the vertical strip on the texture that should be drawn
 
-step	how much to increase the texture coordinate per screen pixel
-texPos
+step		how much to increase the texture coordinate per screen pixel
+texPos texY	which row of the texture to use
 
 
 

@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 17:42:41 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:20:09 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ typedef struct s_state
 	int			ceiling;
 	int			floor;
 	t_img		*tex[4];
-	int			error;
 }				t_state;
 
 #endif

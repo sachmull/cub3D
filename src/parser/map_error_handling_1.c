@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:08:52 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/07 17:41:23 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:59:21 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ static int	check_forbidden_characters(t_state *state)
 			if (state->map->map[y][x] != '0' && state->map->map[y][x] != '1'
 				&& state->map->map[y][x] != 'N' && state->map->map[y][x] != 'S'
 				&& state->map->map[y][x] != 'E' && state->map->map[y][x] != 'W'
-				&& state->map->map[y][x] != ' ' && state->map->map[y][x] != '-')
+				&& state->map->map[y][x] != ' ' && state->map->map[y][x] != '-'
+				&& state->map->map[y][x] != 'D')
 				return (-1);
 			x++;
 		}

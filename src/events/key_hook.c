@@ -6,18 +6,25 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:01:27 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/06 16:25:57 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 21:21:49 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <events.h>
 
-// int	exit_cub(t_state *state)
-// {
-// 	(void)state;
-	
-// 	exit(0);
-// }
+void	door(t_state *state)
+{
+	const int	y = state->player.pos.y + state->player.dir.y;
+	const int	x = state->player.pos.x + state->player.dir.x;
+
+	if ((int)state->player.pos.x != x || (int)state->player.pos.y != y)
+	{
+		if (state->map->map[y][x] == 'D')
+			state->map->map[y][x] = 'O';
+		else if (state->map->map[y][x] == 'O')
+			state->map->map[y][x] = 'D';
+	}
+}
 
 int	key_down(int kc, t_state *state)
 {
@@ -35,6 +42,8 @@ int	key_down(int kc, t_state *state)
 		state->pressed[D] = 1;
 	else if (kc == ESC_KC)
 		exit_cub(state);
+	else if (kc == F_KC)
+		door(state);
 	return (0);
 }
 

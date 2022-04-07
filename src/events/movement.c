@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 11:51:27 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 17:29:12 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 21:17:37 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	go(t_state *state, t_vec2 dir)
 
 	if (new_x > 0 && new_x < state->map->map_width && new_y > 0
 		&& new_y < state->map->map_height
-		&& state->map->map[(int)new_y][(int)new_x] == '0')
+		&& (state->map->map[(int)new_y][(int)new_x] == '0'
+		|| state->map->map[(int)new_y][(int)new_x] == 'O'))
 	{
 		state->player.pos.x = new_x;
 		state->player.pos.y = new_y;

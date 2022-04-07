@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:12:58 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 17:31:58 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 21:18:43 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ void	draw_minimap(t_state *state)
 			if (state->map->map[y][x] == '1')
 				mu_draw_rect(&state->img, mu_new_rect(x * SCALE_W, y * SCALE_H,
 						SCALE_W, SCALE_H), state->map->floor);
+			else if (state->map->map[y][x] == 'D'
+				|| state->map->map[y][x] == 'O')
+				mu_draw_rect(&state->img, mu_new_rect(x * SCALE_W, y * SCALE_H,
+						SCALE_W, SCALE_H), mu_new_trgb(0, 92, 79, 44));
 			++x;
 		}
 		++y;

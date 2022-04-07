@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:50 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/07 17:40:51 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 18:06:07 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	parsing(t_state *state, char **argv)
 {
 	if (check_access(argv[1]) != 0)
 		return (-1);
-	if (parse_identifiers(state, argv[1]) == -1)
+	if (parse_identifiers(state, argv[1]) != 0)
 		return (-1);
 	if (parse_map(state, argv) != 0)
 		return (-1);
