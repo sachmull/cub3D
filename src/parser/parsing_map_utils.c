@@ -6,35 +6,11 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:45 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/06 20:19:36 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:01:58 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <parser.h>
-
-void	print_map(t_state *state)
-{
-	//nur testing
-	int		x;
-	int		y;
-
-	x = 0;
-	y = 0;
-	printf("\n CUB3D MAP \n\n");
-	while (y < state->map->map_height)
-	{
-		x = 0;
-		while (x < state->map->map_width)
-		{
-			printf("[%c]", state->map->map[y][x]);
-			x++;
-		}
-		printf("\n");
-		y++;
-	}
-	printf("\n");
-}
-
 
 /* Opens the file with reading permission and saves the file descriptor in fd
 passed by it's address. Function returns -1 if unsuccessful. */
@@ -49,7 +25,6 @@ int	open_cub_file(char *file, int *fd)
 	}
 	return (0);
 }
-
 
 /* Loops through file until the specified position in *.cub. */
 int	get_to_pos(int pos, int fd)

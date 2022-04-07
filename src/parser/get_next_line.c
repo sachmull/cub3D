@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:08:55 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 14:17:27 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:48:56 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 	if (buffer == NULL)
 		return (NULL);
 	bytes = 1;
-	while (bytes > 0) // && ft_strchr(line, '\n') == NULL)
+	while (bytes > 0)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes == 0 || bytes == -1)

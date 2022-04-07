@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/06 20:27:33 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:50:26 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@ static int	init_state(t_state *state)
 	if (state->map == NULL)
 	{
 		ft_putstr_fd("Error\nMemory allocation error\n", 1);
-		return (-1);
+		exit_cub(state);
 	}
 	state->map->map_height = 0;
 	state->map->map_width = 0;
 	state->map->map = NULL;
 	state->map->pos_map = -5;
-	state->map->path_text = ft_calloc(sizeof(char *), 5);			//shit freen
+	state->map->path_text = ft_calloc(sizeof(char *), 5);
 	state->map->colours = ft_calloc(sizeof(char *), 4);
 	if (state->map->path_text == NULL || state->map->path_text == NULL)
 	{
 		ft_putstr_fd("Error\nMemory allocation error\n", 1);
-		// ft_free_all(state);
-		return (-1);
+		exit_cub(state);
 	}
 	state->map->colours[2] = NULL;
 	state->map->path_text[4] = NULL;
+	state->error = 0;
 	return (0);
 }
 
@@ -67,6 +67,9 @@ int	main(int argc, char **argv)
 		return (1);
 	set_player_pos(&state);
 
+	// if (error == 1)				//varialbe auf ++ setzen wenn etwas beim parsen schief läuft
+	// 	exit_cub(&state);
+
 	mlx_loop_hook(state.mlx, loop_hook, &state);
 	mlx_hook(state.win, KEY_DOWN, 0, key_down, &state);
 	mlx_hook(state.win, KEY_UP, 0, key_up, &state);
@@ -75,6 +78,5 @@ int	main(int argc, char **argv)
 	mlx_hook(state.win, MOUSE_UP, 0, mouse_up, &state);
 	mlx_hook(state.win, MOUSE_MOVE, 0, mouse_move, &state);
 	mlx_loop(state.mlx);
-	// ft_free_all(&state);			//added Kathi
 	return (EXIT_SUCCESS);
 }

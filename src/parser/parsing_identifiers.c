@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:27 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/06 20:26:42 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:04:46 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ static int	check_characters(char *line)
 	j = 0;
 	while (i < ft_strlen(line) - 1)
 	{
-		if (line[i] != '0' && line[i] != '1' && line[i] != 'N' && line[i] != 'S'
-			&& line[i] != 'E' && line[i] != 'W' && line[i] != ' ')	//&& line[i] != 'D'
+		if (line[i] != '0' && line[i] != '1' && line[i] != 'N' && \
+			line[i] != 'S' && line[i] != 'E' && line[i] != 'W' && \
+			line[i] != ' ' && line[i] != 'D')
 			return (1);
 		i++;
 	}
@@ -40,7 +41,8 @@ static int	get_rgb_spawning(t_state *state, char *line)
 
 	temp = NULL;
 	token = ft_split(line, ' ');
-	if (token == NULL || ft_arrlen(token) != 2) {
+	if (token == NULL || ft_arrlen(token) != 2) //was haben wir hier nochmal vereinbart?
+	{
 		ft_free_strarray(&token);
 		return (1);
 	}

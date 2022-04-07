@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/01 13:05:52 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:51:44 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <fcntl.h>
 # include <libft.h>
 # include <raycaster.h>
+# include <exit.h>
 
 typedef struct s_map
 {
@@ -32,7 +33,6 @@ typedef struct s_map
 
 #define BUFFER_SIZE 1
 
-// int		main(int argc, char **argv);
 /* Check and set the players start coordinates */
 void	set_player_pos(t_state *state);
 
@@ -51,12 +51,11 @@ int		check_identifiers(t_state *state);
 int		check_column(t_state *state, int x);
 int		check_row(t_state *state, int y);
 int		load_textures(t_state *state);
+
 /* Utils */
 int		get_to_pos(int pos, int fd);
 int		ft_isinstring(char *string, char c);
 int		open_cub_file(char *file, int *fd);
-//delete
-void	print_map(t_state *state);
 
 /* GNL */
 char	*get_next_line(int fd);
@@ -66,17 +65,5 @@ char	*ft_get_output(char **line);
 void	ft_free_string(char **string);
 void	ft_free_strarray(char ***arr);
 int		ft_arrlen(char **token);
-
-
-												//Basti
-// t_result	parse(t_state *state, char *file);
-
-
-// // utility.c
-// t_result	check_extension(char *file, char *ext);
-// t_result	check_access(char *file);
-// t_result	is_empty(char *line);
-// void		free_splits(char **splitted);
-// t_result	file_to_img(void *mlx, t_img *dst, char *path);
 
 #endif

@@ -6,15 +6,11 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:08:52 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 00:08:53 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:03:39 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <parser.h>
-
-/*
- each type of information from an element can be separated by one or more spaces
- */
 
 /* Checks for forbidden characters in *.cub file except 0,1,N,W,S,E,' '. */
 static int	check_forbidden_characters(t_state *state)
@@ -96,7 +92,6 @@ static int	check_space(t_state *state, int y, int x, char c)
 	}
 	return (0);
 }
-
 
 /* Checks whether all 0 or ' ' are framed by walls. */
 static int	check_walls(t_state *state)

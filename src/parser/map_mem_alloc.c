@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:05 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/06 20:21:26 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:01:32 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	mem_alloc_rows(t_state *state, char *file)
 		if (state->map->map[i] == NULL)
 		{
 			ft_putstr_fd("Error\nAllocation failed!\n", 1);
-			ft_free_strarray(&state->map->map);
 			return (-1);
 		}
 		ft_free_string(&line);

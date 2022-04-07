@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:35 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/06 20:18:38 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:48:40 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,18 @@ static void	init_map(t_state *state)
 	}
 }
 
+static int	get_width(t_state *state, int y, char *line)
+{
+	int	width;
+
+	width = 0;
+	if (y == (state->map->map_height -1))
+		width = ft_strlen(line);
+	else
+		width = ft_strlen(line) - 1;
+	return (width);
+}
+
 static int	read_map_grid(t_state *state, int fd)
 {
 	int		y;
@@ -46,10 +58,7 @@ static int	read_map_grid(t_state *state, int fd)
 	while (y < state->map->map_height)
 	{
 		x = 0;
-		if (y == (state->map->map_height -1))
-			width = ft_strlen(line);
-		else
-			width = ft_strlen(line) - 1;
+		width = get_width(state, y, line);
 		while (x != width)
 		{
 			state->map->map[y][x] = line[x];
