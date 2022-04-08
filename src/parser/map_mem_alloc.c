@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:05 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/06 20:21:26 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:36:40 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ int	mem_alloc_rows(t_state *state, char *file)
 	char	*line;
 
 	i = 0;
-	fd = 0;
 	line = NULL;
-	if (open_cub_file(file, &fd) == -1)
+	fd = open_file_get_to_pos(state, file);
+	if (fd == -1)
 		return (-1);
-	get_to_pos(state->map->pos_map, fd);
 	while (i < state->map->map_height)
 	{
 		state->map->map[i] = ft_calloc(sizeof(char), state->map->map_width + 1);
