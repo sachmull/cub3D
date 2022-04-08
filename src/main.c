@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/08 14:01:21 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:27:40 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,18 @@ static void	init_state(t_state *state)
 
 t_state	get_state(void)
 {
-	void *mlx = mlx_init();
-	void *win = mlx_new_window(mlx, WIN_W, WIN_H, "cub3D");
+	const void	*mlx = mlx_init();
+	const void	*win = mlx_new_window((void *)mlx, WIN_W, WIN_H, "cub3D");
 
 	return ((t_state)
-	{
-		.mlx = mlx,
-		.win = win,
-		.img = mu_new_img(mlx, WIN_W, WIN_H),
-		.mouse_x = 0,
-		.pressed = {0, 0, 0, 0, 0, 0, 0, 0},
-		.counter = 0
-	});
+		{
+			.mlx = (void *)mlx,
+			.win = (void *)win,
+			.img = mu_new_img((void *)mlx, WIN_W, WIN_H),
+			.mouse_x = 0,
+			.pressed = {0, 0, 0, 0, 0, 0, 0, 0},
+			.counter = 0
+		});
 }
 
 void	load_hand_textures(t_state *state)

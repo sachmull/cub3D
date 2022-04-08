@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:29:40 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 21:16:29 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:28:44 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,9 @@ void	dda(t_dda *data, t_state *state)
 			data->mapx += data->stepx;
 			data->side = 0;
 			data->perpwalldist = (data->sidedistx - data->deltadistx);
+			data->texture = *state->tex[3];
 			if (data->raydirx > 0)
 				data->texture = *state->tex[1];
-			else
-				data->texture = *state->tex[3];
 		}
 		else
 		{
@@ -61,10 +60,9 @@ void	dda(t_dda *data, t_state *state)
 			data->mapy += data->stepy;
 			data->side = 1;
 			data->perpwalldist = (data->sidedisty - data->deltadisty);
+			data->texture = *state->tex[0];
 			if (data->raydiry > 0)
 				data->texture = *state->tex[2];
-			else
-				data->texture = *state->tex[0];
 		}
 	}
 }
