@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 16:34:53 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/07 18:19:27 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 21:43:48 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	free_map(t_state *state)
 	y = 0;
 	while (y < state->map->map_height)
 	{
-		if (state->map->map[y] != NULL)
+		if (state->map->map[y])
 		{
 			free (state->map->map[y]);
 			state->map->map[y] = NULL;
@@ -98,7 +98,8 @@ void	free_state(t_state *state)
 {
 	free_colours(state);
 	free_path_textures(state);
-	free_map(state);
+	if (state->map->map)
+		free_map(state);
 	free_textures(state);
 	if (state->map)
 	{

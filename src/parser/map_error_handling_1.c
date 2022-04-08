@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:08:52 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/08 15:36:50 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:43:21 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,11 +124,6 @@ static int	check_walls(t_state *state)
 and prints an error message in case it fails. */
 int	map_error_check(t_state *state)
 {
-	if (check_identifiers(state) != 0)
-	{
-		ft_putstr_fd("Error\nNo valid information in *.cub file\n", 1);
-		return (-1);
-	}
 	if (check_forbidden_characters(state) != 0)
 	{
 		ft_putstr_fd("Error\nInvalid characters in *.cub file.\n", 1);

@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/08 16:23:50 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 22:42:08 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_map
 	char	**path_text;
 	char	**colours;
 	int		rgb[6];
+	int		id_pos[6];
 	int		ceiling;
 	int		floor;
 }	t_map;
@@ -47,7 +48,7 @@ int		mem_alloc_columns(t_state *state);
 int		mem_alloc_rows(t_state *state, char *file);
 int		read_map(t_state *state, char *file);
 int		map_error_check(t_state *state);
-int		check_identifiers(t_state *state);
+int		rgb_config(t_state *state);
 int		check_column(t_state *state, int x);
 int		check_row(t_state *state, int y);
 int		load_textures(t_state *state);

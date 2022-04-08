@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_error_identifiers.c                          :+:      :+:    :+:   */
+/*   rgb_config.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 00:08:35 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/08 16:06:33 by khammers         ###   ########.fr       */
+/*   Created: 2022/04/08 19:15:26 by khammers          #+#    #+#             */
+/*   Updated: 2022/04/08 19:31:13 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ static int	parse_rgb_info(t_state *state, int i, int *k)
 	temp = ft_split(state->map->colours[i], ',');
 	if (temp == NULL)
 		return (-1);
+	if (ft_arrlen(temp) != 3)
+	{
+		ft_putstr_fd("Error\nNo valid RGB input\n", 1);
+		return (-1);
+	}
 	while (temp[j])
 	{
 		state->map->rgb[*k] = ft_atoi(temp[j++]);
@@ -46,7 +51,8 @@ static int	get_rgb(t_state *state)
 	k = 0;
 	while (state->map->colours[i])
 	{
-		parse_rgb_info(state, i, &k);
+		if (parse_rgb_info(state, i, &k) == -1)
+			return (-1);
 		i++;
 	}
 	return (0);
@@ -61,47 +67,8 @@ static void	transform_rgb(t_state *state )
 		((state->map->rgb[4] & 0xff) << 8) + (state->map->rgb[5] & 0xff);
 }
 
-int	ft_strcmp_new(const char *s1, const char *s2, size_t n)
+int	rgb_config(t_state *state)
 {
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i])
-	{
-		if (i + 1 == n)
-			break ;
-		if (s1[i + 1] == '\0' || s2[i + 1] == '\0')
-			return ((unsigned char)s1[i + 1] - (unsigned char)s2[i + 1]);
-		i++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-}
-
-/* Checks for right strlen of path and colour array, right range of RGV values
-and a valid path for texture paths. */
-int	check_identifiers(t_state *state)
-{
-	if (ft_strnstr(state->map->path_text[0], "NO",
-			ft_strlen(state->map->path_text[0])) == NULL && \
-			ft_strnstr(state->map->path_text[1], "EA",
-			ft_strlen(state->map->path_text[1])) == NULL && \
-			ft_strnstr(state->map->path_text[2], "SO",
-			ft_strlen(state->map->path_text[2])) == NULL && \
-			ft_strnstr(state->map->path_text[3], "WE",
-			ft_strlen(state->map->path_text[3])) == NULL && \
-			ft_strnstr(state->map->path_text[3], "WE",
-			ft_strlen(state->map->path_text[3])) == NULL && \
-			ft_strchr(state->map->colours[0], 'C') == NULL && \
-			ft_strchr(state->map->colours[1], 'F') == NULL && \
-			(ft_arrlen(state->map->path_text) != 4 || \
-			ft_arrlen(state->map->colours) != 2 \
-			|| state->map->pos_map == -5))
-	{
-		ft_putstr_fd("Error\nInvalid identifiers found\n", 1);
-		return (-1);
-	}
 	if (get_rgb(state) != 0)
 		return (-1);
 	transform_rgb(state);
