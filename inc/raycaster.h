@@ -6,15 +6,12 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/08 14:01:28 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:41:45 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RAYCASTER_H
 # define RAYCASTER_H
-
-#include <time.h>
-#include <stdio.h>
 
 # include <mlx.h>
 # include <stdlib.h>
@@ -50,19 +47,19 @@ typedef struct s_map	t_map;
 
 typedef struct s_state
 {
-	void		*mlx;
-	void		*win;
-	t_img		img;
-	int			mouse_x;
-	t_player	player;
-	t_keys		pressed[KEY_COUNT];
-	t_img		*hand[4];
+	void			*mlx;
+	void			*win;
+	t_img			img;
+	int				mouse_x;
+	t_player		player;
+	t_keys			pressed[KEY_COUNT];
+	t_img			*hand[4];
 	unsigned int	counter;
 
-	t_map		*map;
-	int			ceiling;
-	int			floor;
-	t_img		*tex[4];
+	t_map			*map;
+	int				ceiling;
+	int				floor;
+	t_img			*tex[4];
 }				t_state;
 
 #endif
