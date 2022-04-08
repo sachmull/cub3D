@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 16:24:21 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/08 14:03:55 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:20:44 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	free_hand(t_state *state)
 	i = 0;
 	while (i < 4)
 	{
-		mlx_destroy_image(state->mlx, state->hand[i]->img);
+		if (state->hand[i])
+			mlx_destroy_image(state->mlx, state->hand[i]->img);
 		free(state->hand[i]);
 		++i;
 	}
