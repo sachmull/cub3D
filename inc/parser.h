@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/08 16:10:54 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:23:50 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ int		load_textures(t_state *state);
 int		get_to_pos(int pos, int fd);
 int		ft_isinstring(char *string, char c);
 int		open_cub_file(char *file, int *fd);
-//delete
-void	print_map(t_state *state);
 
 /* GNL */
 char	*get_next_line(int fd);
