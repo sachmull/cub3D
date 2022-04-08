@@ -24,7 +24,11 @@ Explanation of various testing maps
 	identifiers behind map
 12)	content_2.cub
 	multiple identifiers of same information
-13)	map_1.cub
+13) content_3.cub
+	separating identifiers by multiple spaces, changed order
+14)	map_1.cub
 	invalid character in map
-14)	map_2.cub
+15)	map_2.cub
 	empty line in map
+16)	map_3.cub
+	spaces in map
