@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:45:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/07 17:58:09 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:37:13 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	get_cln_last_wl(t_state *state, int x)
 	return (save);
 }
 
-static int ft_col_height(t_state *state, int x)
+static int	ft_col_height(t_state *state, int x)
 {
 	int	counter;
 	int	y;

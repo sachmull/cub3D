@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/01 13:05:52 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:34:19 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	set_player_pos(t_state *state);
 /* Input verification and functions for map parsing & map error handling. */
 int		check_args(int argc, char **argv);
 int		parsing(t_state *state, char **argv);
+int		open_file_get_to_pos(t_state *state, char *file);
 int		parse_identifiers(t_state *state, char *file);
 int		parse_map(t_state *state, char **argv);
 int		get_map_height(t_state *state, char *file);

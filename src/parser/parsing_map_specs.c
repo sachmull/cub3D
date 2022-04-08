@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:41 by khammers          #+#    #+#             */
-/*   Updated: 2022/03/31 14:27:17 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:33:33 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,19 +75,19 @@ int	get_map_height(t_state *state, char *file)
 	char	*line;
 
 	i = 0;
-	fd = 0;
 	len = 0;
 	line = NULL;
-	if (open_cub_file(file, &fd) == -1)
+	fd = open_file_get_to_pos(state, file);
+	if (fd == -1)
 		return (-1);
-	get_to_pos(state->map->pos_map, fd);
-	while (1)
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
-		line = get_next_line(fd);
-		if (line == NULL || (ft_strchr(line, '1') == NULL && ft_isalpha(line[0]) == 0))
+		if ((ft_strchr(line, '1') == NULL && ft_isalpha(line[0]) == 0))
 			break ;
-		ft_free_string(&line);
 		state->map->map_height++;
+		ft_free_string(&line);
+		line = get_next_line(fd);
 	}
 	if (check_empty_line(fd) != 0)
 		return (-1);
