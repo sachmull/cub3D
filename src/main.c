@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 18:26:21 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:01:21 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,18 @@ t_state	get_state(void)
 		.win = win,
 		.img = mu_new_img(mlx, WIN_W, WIN_H),
 		.mouse_x = 0,
-		.pressed = {0, 0, 0, 0, 0, 0, 0, 0}
+		.pressed = {0, 0, 0, 0, 0, 0, 0, 0},
+		.counter = 0
 	});
 }
 
+void	load_hand_textures(t_state *state)
+{
+	state->hand[0] = mu_new_xpm_img(state->mlx, "hand/hand-01.xpm");
+	state->hand[1] = mu_new_xpm_img(state->mlx, "hand/hand-05.xpm");
+	state->hand[2] = mu_new_xpm_img(state->mlx, "hand/hand-06.xpm");
+	state->hand[3] = mu_new_xpm_img(state->mlx, "hand/hand-05.xpm");
+}
 
 int	main(int argc, char **argv)
 {
@@ -64,6 +72,7 @@ int	main(int argc, char **argv)
 	if (parsing(&state, argv) == -1)
 		exit_cub(&state);
 	set_player_pos(&state);
+	load_hand_textures(&state);
 	mlx_loop_hook(state.mlx, loop_hook, &state);
 	mlx_hook(state.win, KEY_DOWN, 0, key_down, &state);
 	mlx_hook(state.win, KEY_UP, 0, key_up, &state);

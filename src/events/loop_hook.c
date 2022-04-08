@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 11:49:42 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/01 14:46:04 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 23:41:26 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	loop_hook(t_state *state)
 	movement(state);
 	cgtutor(state);
 	draw_minimap(state);
+	hand(state);
+	++state->counter;
 
 	clock_gettime(CLOCK_MONOTONIC, &tend);
 	printf("FPS %.5f\n",

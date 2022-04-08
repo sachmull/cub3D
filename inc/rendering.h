@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 12:23:08 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/05 16:45:40 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/07 22:19:39 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ typedef struct s_dda
 
 void	cgtutor(t_state *state);
 void	draw_minimap(t_state *state);
+void	hand(t_state *state);
 
 #endif

@@ -32,4 +32,7 @@ texPos texY	which row of the texture to use
 
 
 
-SEGFAULT wenn texture file nicht existiert
+i 0 offene hand
+i 4 halb geschlossene hand
+i 5 fast gesclossene hand
+i 3 igeschlossene hand

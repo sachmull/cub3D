@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycaster.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:25:35 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/07 18:20:09 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:01:28 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ typedef struct s_state
 	int			mouse_x;
 	t_player	player;
 	t_keys		pressed[KEY_COUNT];
+	t_img		*hand[4];
+	unsigned int	counter;
 
 	t_map		*map;
 	int			ceiling;
