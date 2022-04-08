@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/08 16:10:54 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:20:03 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_map
 void	set_player_pos(t_state *state);
 
 /* Input verification and functions for map parsing & map error handling. */
-int		check_args(int argc, char **argv);
+int		check_args(t_state *state, int argc, char **argv);
 int		parsing(t_state *state, char **argv);
 int		open_file_get_to_pos(t_state *state, char *file);
 int		parse_identifiers(t_state *state, char *file);

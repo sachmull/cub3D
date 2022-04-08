@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:50 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/07 18:06:07 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:16:38 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ static int	check_access(char *file)
 int	parsing(t_state *state, char **argv)
 {
 	if (check_access(argv[1]) != 0)
-		return (-1);
+		exit_cub(state);
 	if (parse_identifiers(state, argv[1]) != 0)
-		return (-1);
+		exit_cub(state);
 	if (parse_map(state, argv) != 0)
-		return (-1);
+		exit_cub(state);
 	if (map_error_check(state) != 0)
-		return (-1);
+		exit_cub(state);
 	if (load_textures(state) != 0)
-		return (-1);
+		exit_cub(state);
 	return (0);
 }

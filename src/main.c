@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/08 15:27:40 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:19:24 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,8 @@ int	main(int argc, char **argv)
 
 	state = get_state();
 	init_state(&state);
-	if (check_args(argc, argv) == -1)
-		exit_cub(&state);
-	if (parsing(&state, argv) == -1)
-		exit_cub(&state);
+	check_args(&state, argc, argv);
+	parsing(&state, argv);
 	set_player_pos(&state);
 	load_hand_textures(&state);
 	mlx_loop_hook(state.mlx, loop_hook, &state);
