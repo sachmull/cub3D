@@ -6,7 +6,7 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:26:09 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/08 15:27:40 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:19:12 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ t_state	get_state(void)
 			.img = mu_new_img((void *)mlx, WIN_W, WIN_H),
 			.mouse_x = 0,
 			.pressed = {0, 0, 0, 0, 0, 0, 0, 0},
-			.counter = 0
+			.counter = 0,
+			.hand = {NULL, NULL, NULL, NULL}
 		});
 }
 
