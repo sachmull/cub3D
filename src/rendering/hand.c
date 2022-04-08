@@ -6,14 +6,14 @@
 /*   By: sachmull <sachmull@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 22:19:05 by sachmull          #+#    #+#             */
-/*   Updated: 2022/04/08 14:17:32 by sachmull         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:21:14 by sachmull         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <rendering.h>
 
-#define HAND_HEIGHT 256
-#define HAND_WIDTH 256
+#define HAND_HEIGHT 300
+#define HAND_WIDTH 300
 
 void	draw_hand_pixel(t_state *state, t_vec2 *tex, t_vec2 *coor)
 {
