@@ -33,9 +33,9 @@ SRC =	src/main.c \
 		src/events/key_hook.c src/events/loop_hook.c src/events/mouse_hook.c src/events/movement.c \
 		src/rendering/cgtutor.c src/rendering/minimap.c src/rendering/hand.c \
 		src/vec2/perpendicular_vec2.c src/vec2/s_multiplication.c	\
-		src/parser/check_args.c src/parser/parsing.c src/parser/parsing_identifiers.c \
-		src/parser/parsing_map_content.c src/parser/parsing_map_specs.c src/parser/parsing_map_utils.c \
-		src/parser/map_mem_alloc.c src/parser/check_error_walls_row.c \
+		src/parser/check_args.c src/parser/parsing.c src/parser/parsing_identifiers_1.c \
+		src/parser/parsing_identifiers_2.c src/parser/parsing_map_content.c src/parser/parsing_map_specs.c \
+		src/parser/parsing_map_utils.c src/parser/map_mem_alloc.c src/parser/check_error_walls_row.c \
 		src/parser/check_error_walls_column.c src/parser/map_error_handling_1.c src/parser/get_next_line.c \
 		src/parser/utils.c src/parser/tex_handling.c src/parser/set_player_pos.c src/parser/rgb_config.c \
 		src/exit/exit_cub.c	src/exit/free_state.c

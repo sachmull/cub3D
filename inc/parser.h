@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:58:14 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/08 22:42:08 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/09 18:06:18 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ int		check_args(int argc, char **argv);
 int		parsing(t_state *state, char **argv);
 int		open_file_get_to_pos(t_state *state, char *file);
 int		parse_identifiers(t_state *state, char *file);
+int		get_pos(t_state *state, char *line, char *temp, int i);
+char	**get_token(char *line);
+int		check_characters(char *line);
 int		parse_map(t_state *state, char **argv);
 int		get_map_height(t_state *state, char *file);
 int		get_max_width(t_state *state, char *file);
