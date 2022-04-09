@@ -6,7 +6,7 @@
 /*   By: khammers <khammers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:09:41 by khammers          #+#    #+#             */
-/*   Updated: 2022/04/08 21:44:56 by khammers         ###   ########.fr       */
+/*   Updated: 2022/04/09 18:18:37 by khammers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ static int	check_empty_line(int fd)
 		close(fd);
 		return (-1);
 	}
+	ft_free_string(&line);
 	return (0);
 }
 
@@ -89,9 +90,9 @@ int	get_map_height(t_state *state, char *file)
 		ft_free_string(&line);
 		line = get_next_line(fd);
 	}
+	ft_free_string(&line);
 	if (check_empty_line(fd) != 0)
 		return (-1);
-	ft_free_string(&line);
 	close(fd);
 	return (0);
 }

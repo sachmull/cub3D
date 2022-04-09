@@ -25,7 +25,7 @@ Explanation of various testing maps
 12)	content_2.cub
 	multiple identifiers of same information
 13) content_3.cub
-	separating identifiers by multiple spaces, changed order
+	separating identifiers by multiple spaces, changed order (still valid)
 14)	map_1.cub
 	invalid character in map
 15)	map_2.cub
