@@ -54,11 +54,9 @@ static int	get_rw_last_wl(t_state *state, int y, char c)
 are ignored. */
 int	check_row(t_state *state, int y)
 {
-	int	i;
 	int	rw_first;
 	int	rw_last;
 
-	i = 0;
 	rw_first = get_rw_first_wl(state, y);
 	if (rw_first == -1)
 		return (-1);

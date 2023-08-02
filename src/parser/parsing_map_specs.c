@@ -71,12 +71,8 @@ the map. */
 int	get_map_height(t_state *state, char *file)
 {
 	int		fd;
-	int		i;
-	int		len;
 	char	*line;
 
-	i = 0;
-	len = 0;
 	line = NULL;
 	fd = open_file_get_to_pos(state, file);
 	if (fd == -1)

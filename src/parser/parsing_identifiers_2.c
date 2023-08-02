@@ -81,10 +81,8 @@ characters. If so, the start of the map has not bee n found. */
 int	check_characters(char *line)
 {
 	size_t	i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	while (i < ft_strlen(line) - 1)
 	{
 		if (line[i] != '0' && line[i] != '1' && line[i] != 'N' && line[i] != 'S'

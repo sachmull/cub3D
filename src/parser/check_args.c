@@ -27,9 +27,6 @@ static int	check_file_format(char *file)
 input is correct, print an error message and return -1 if not. */
 int	check_args(int argc, char **argv)
 {
-	char	*map_format;
-
-	map_format = ".cub";
 	if (argv[1] == NULL || argc != 2)
 	{
 		ft_putstr_fd("Error\nNo valid map.\n", 1);

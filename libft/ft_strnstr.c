@@ -19,9 +19,9 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 	char	segfault;
 
 	if (little == NULL)
-		segfault = little[0];
+		(void)(segfault = little[0]);
 	if (big == NULL)
-		segfault = big[0];
+		(void)(segfault = big[0]);
 	little_len = ft_strlen((char *)little);
 	index = 0;
 	if (little_len == 0)
